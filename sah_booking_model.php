@@ -114,7 +114,7 @@ class Sah_booking_model extends CI_Model
 											OR est_ar_status = "Pending"
 										)');
 		else if($auth == 'dsw')
-			$query = $this->db->query('SELECT erd.* FROM sah_registration_details AS srd INNER JOIN users ON srd.user_id = users.id WHERE auth_id = "stu" AND (est_ar_status IS NULL OR est_ar_status = "Pending")');
+			$query = $this->db->query('SELECT srd.* FROM sah_registration_details AS srd INNER JOIN users ON srd.user_id = users.id WHERE auth_id = "stu" AND (est_ar_status IS NULL OR est_ar_status = "Pending")');
 		else if($auth == 'est_da4')
 			$query = $this->db->query('SELECT * FROM sah_registration_details WHERE app_num NOT IN (SELECT app_num FROM sah_registration_details WHERE ctk_allotment_status != "")');
 		else if($auth == 'est_ar')
